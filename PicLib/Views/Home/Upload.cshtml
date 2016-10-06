@@ -1,0 +1,32 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <script src="~/Scripts/Upload.js"></script>
+    <div class="row fullHeight">
+        <div class="col-lg-6">
+            <canvas id="Uploaded-pic"></canvas>
+        </div>
+        <div class="col-lg-6">
+            <div id="Uploaded-pic-menu">
+
+             @using (Html.BeginForm("UploadImageBtnPressed", "home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+             {
+                <input type="file" name="FileUpload1"/>
+                <input type="submit" name="Submit" value="Upload"/>
+             }
+                
+                <a href="#" class="btn btn-default" id="color_btn">change color</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
